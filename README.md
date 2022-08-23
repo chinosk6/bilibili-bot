@@ -15,7 +15,7 @@
 - 打开`plugins`文件夹, 新建一个包
   - 怎么新建包: 创建一个文件夹, 在里面添加`__init__.py`
 
-- 插件代码例 ([/plugins/hello/reg.py](/blob/main/plugins/hello/reg.py)):
+- 插件代码例 ([/plugins/hello/reg.py](/plugins/hello/reg.py)):
 
 ```python
 from bot_core import CommandRegister, BotCodes
@@ -57,7 +57,7 @@ def chat_hello_img(ctx: ChatSessionHistoryMessage):
 ----
 
 - 打开`bili_config.json`
-- 在`cookies`字段出粘贴您的完整cookie
+- 在`cookies`中粘贴您的完整cookie, 见下方的`cookie获取方法`
 - `cookieIndex`字段表示您需要使用`cookies`中的哪个cookie
 
 ```json
@@ -72,6 +72,12 @@ def chat_hello_img(ctx: ChatSessionHistoryMessage):
     }
 }
 ```
+
+#### cookie获取方法
+
+- 按下`F12`, 打开您的B站主页, 复制`headers`内的`cookie`字段的内容即可 
+
+<img src="https://raw.githubusercontent.com/chinosk114514/bilibili-bot/main/image/get_cookie.png" alt="cookie获取方法" style="zoom: 50%;" />
 
 
 
@@ -135,5 +141,5 @@ bot.run(10, 10)  # 第一个参数表示刷新秒数间隔, 数值越小, bot回
 
 # TODO
 
- - 目前sdk内没有集成收发消息以外的API, 若需要获取B站用户信息等, 可以参考 [/bili_api/api.py](/blob/main/bili_api/api.py) 的写法和 [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 这个仓库内的API自行添加, 欢迎pr~
+ - 目前sdk内没有集成收发消息以外的API, 若需要获取B站用户信息等, 可以参考 [/bili_api/api.py](/bili_api/api.py) 的写法和 [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 这个仓库内的API自行添加, 欢迎pr~
 
