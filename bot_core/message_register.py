@@ -64,7 +64,7 @@ class CommandRegister:
         return c_func
 
     @staticmethod
-    def reg_regix(regix: str, allowed_type=None):
+    def reg_regex(regix: str, allowed_type=None):
         if allowed_type is None:
             allowed_type = default_allowed_type
         global r_msg
@@ -121,7 +121,7 @@ class Matcher:
         return ret
 
     @staticmethod
-    def msg_regix(msg_content: str, msg_type):
+    def msg_regex(msg_content: str, msg_type):
         ret = []
         for cmds in r_msg:
             cmd, func, allowed = cmds
@@ -145,6 +145,6 @@ def get_matching_methods(msg_content: str, msg_type):
     st = Matcher.startswith(msg_content, msg_type)
     ed = Matcher.endswith(msg_content, msg_type)
     st_ed = Matcher.starts_and_endswith(msg_content, msg_type)
-    rx = Matcher.msg_regix(msg_content, msg_type)
+    rx = Matcher.msg_regex(msg_content, msg_type)
     ex = Matcher.msg_ex(msg_content, msg_type)
     return st + ed + st_ed + rx + ex
